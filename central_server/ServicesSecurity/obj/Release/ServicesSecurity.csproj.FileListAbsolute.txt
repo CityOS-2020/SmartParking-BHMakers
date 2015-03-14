@@ -1,0 +1,16 @@
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\ServicesSecurity.dll.config
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\ServicesSecurity.dll
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\ServicesSecurity.pdb
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\Domain.dll
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\EntityFramework.dll
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\EntityFramework.SqlServer.dll
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\Domain.pdb
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\EntityFramework.xml
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\EntityFramework.SqlServer.xml
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\VS2012_Projects\SmartParking\ServicesSecurity\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\VS2012_Projects\SmartParking\ServicesSecurity\obj\Release\ServicesSecurity.csprojResolveAssemblyReference.cache
+C:\VS2012_Projects\SmartParking\ServicesSecurity\obj\Release\ServicesSecurity.dll
+C:\VS2012_Projects\SmartParking\ServicesSecurity\obj\Release\ServicesSecurity.pdb

@@ -1,0 +1,10 @@
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Debug\ServicesInfrastructure.dll
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Debug\ServicesInfrastructure.pdb
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Debug\Newtonsoft.Json.dll
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Debug\System.Net.Http.Formatting.dll
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Debug\System.Web.Http.dll
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Debug\Newtonsoft.Json.xml
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Debug\System.Net.Http.Formatting.xml
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Debug\System.Web.Http.xml
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\obj\Debug\ServicesInfrastructure.dll
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\obj\Debug\ServicesInfrastructure.pdb

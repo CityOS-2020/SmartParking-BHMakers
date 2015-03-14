@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAq1/L7//As0eFECd5MDg35wAAAAACAAAAAAAQZgAAAAEAACAAAADFMSyKrLRNBYZEOUcvsZtdiVNJ3X9MOjijDSvyblfzTgAAAAAOgAAAAAIAACAAAACNkxF6lJCxBqUcwT+7yzOk8pMjRdFTj8nyh416cO8e7hAAAABTpLOVvD5fVh2AHwvt9ryTQAAAADtLXNoxY2yJS+4EJ4JyweroVcRph9c2maoce9wpBcTBROrm8gQWNBOBUOUBUO0FecZm5PlwnnPg3EKjBrlCopA=</EncryptedPassword>
+    <_PublishTargetUrl>ftp://ftp.hardver.ba/preview.hardver.ba/www/users</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>03/13/2015 21:36:29</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.Net4.dll">
+      <publishTime>03/13/2015 21:36:29</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll">
+      <publishTime>03/14/2015 11:22:35</publishTime>
+    </File>
+    <File Include="bin/Domain.dll">
+      <publishTime>03/14/2015 11:22:34</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/13/2015 20:45:41</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/13/2015 20:45:41</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>03/13/2015 20:52:47</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>03/13/2015 20:52:47</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>03/13/2015 22:03:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>03/13/2015 20:35:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>03/13/2015 20:35:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>03/13/2015 22:13:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>03/13/2015 22:13:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>03/13/2015 22:13:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Configuration.dll">
+      <publishTime>03/13/2015 22:13:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>03/13/2015 22:13:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.RegistrationByConvention.dll">
+      <publishTime>03/13/2015 22:13:01</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/13/2015 20:34:28</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>03/13/2015 20:34:29</publishTime>
+    </File>
+    <File Include="bin/ServicesInfrastructure.dll">
+      <publishTime>03/14/2015 00:39:51</publishTime>
+    </File>
+    <File Include="bin/ServicesSecurity.dll">
+      <publishTime>03/14/2015 11:23:38</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>03/13/2015 20:34:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>03/13/2015 20:34:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Owin.dll">
+      <publishTime>03/13/2015 20:34:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>03/13/2015 22:13:14</publishTime>
+    </File>
+    <File Include="bin/Unity.WebApi.dll">
+      <publishTime>03/13/2015 21:51:33</publishTime>
+    </File>
+    <File Include="bin/Users.Service.dll">
+      <publishTime>03/14/2015 11:23:38</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/13/2015 22:13:36</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>03/14/2015 11:23:40</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/14/2015 09:32:30</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

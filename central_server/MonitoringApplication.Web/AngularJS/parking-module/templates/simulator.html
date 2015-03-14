@@ -1,0 +1,36 @@
+﻿<div class="container" style="margin-top:30px;">
+    <div ng-repeat="parking in parkings">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{parking.name}}</h3>
+            </div>
+            <div class="panel-body" style="padding: 0px">
+                <table class="table table-hover table-stripped" style="margin-bottom: 0px">
+                    <tbody>
+                        <tr ng-repeat="place in parkingPlaces[parking.id]">
+                            <td style="width:100px" class="text-center">
+                                <span ng-if="place.status == 0" class="label label-default">Unknown</span>
+                                <span ng-if="place.status == 1" class="label label-success">Free</span>
+                                <span ng-if="place.status == 2" class="label label-info">Occupied</span>
+                                <span ng-if="place.status == 3" class="label label-danger">Blocked</span>
+                                <span ng-if="place.status == 4" class="label label-warning">Expired</span>
+                            </td>
+                            <td>{{place.code}}</td>
+                            <td style="width: 200px" class="text-center">
+                                <select ng-model="changeStatusHash[place.id]" ng-change="changeStatus(place)">
+                                    <option value="-1">- Change status -</option>
+                                    <option value="1">Free</option>
+                                    <option value="2">Occupied</option>
+                                    <option value="3">Blocked</option>
+                                </select>
+                            </td>
+                            <td style="width: 100px" class="text-center">
+                                <button type="button" class="btn btn-primary btn-xs" style="padding-top: 1px; padding-bottom: 1px" ng-click="pay(place)">Pay</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

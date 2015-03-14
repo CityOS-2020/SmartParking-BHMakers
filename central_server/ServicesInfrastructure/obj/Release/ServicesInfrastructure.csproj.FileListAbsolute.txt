@@ -1,0 +1,11 @@
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Release\ServicesInfrastructure.dll
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Release\ServicesInfrastructure.pdb
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Release\Newtonsoft.Json.dll
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Release\System.Net.Http.Formatting.dll
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Release\System.Web.Http.dll
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Release\Newtonsoft.Json.xml
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Release\System.Net.Http.Formatting.xml
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\bin\Release\System.Web.Http.xml
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\obj\Release\ServicesInfrastructure.csprojResolveAssemblyReference.cache
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\obj\Release\ServicesInfrastructure.dll
+C:\VS2012_Projects\SmartParking\ServicesInfrastructure\obj\Release\ServicesInfrastructure.pdb

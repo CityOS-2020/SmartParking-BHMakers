@@ -1,0 +1,14 @@
+C:\VS2012_Projects\SmartParking\Domain\bin\Debug\Domain.dll.config
+C:\VS2012_Projects\SmartParking\Domain\bin\Debug\Domain.dll
+C:\VS2012_Projects\SmartParking\Domain\bin\Debug\Domain.pdb
+C:\VS2012_Projects\SmartParking\Domain\bin\Debug\EntityFramework.dll
+C:\VS2012_Projects\SmartParking\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\VS2012_Projects\SmartParking\Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\VS2012_Projects\SmartParking\Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\VS2012_Projects\SmartParking\Domain\bin\Debug\EntityFramework.xml
+C:\VS2012_Projects\SmartParking\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\VS2012_Projects\SmartParking\Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\VS2012_Projects\SmartParking\Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\VS2012_Projects\SmartParking\Domain\obj\Debug\Domain.dll
+C:\VS2012_Projects\SmartParking\Domain\obj\Debug\Domain.pdb
+C:\VS2012_Projects\SmartParking\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
