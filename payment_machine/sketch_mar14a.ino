@@ -19,6 +19,7 @@ Keypad tastatura = Keypad( makeKeymap(tipke), redpin, kolonapin, red, kolona );
 
 void setup() {
   
+  Serial.begin(9600);
   lcd.begin(16,2);
   
 }  
@@ -30,6 +31,8 @@ void loop() {
   int brojac3 = 0;
   int brojac4 = 0;
   int suma = 0;
+  int h = 0;
+  int m = 0;
   char tipka = NO_KEY;
 pocetak: 
 //prvi ispis
@@ -207,6 +210,8 @@ lcd.print(brojac4);
 delay(2000);
   
   suma = brojac3 * 10 + brojac4;
+  h = suma;
+  m = brojac1*10 + brojac2;
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("ZA PLATITI: ");
@@ -236,6 +241,10 @@ slucaj1:
   }
 
 kraj:
+Serial.write(m);
+delay(1);
+Serial.write(h);
+delay(1);
 lcd.clear();
 delay(1);
 lcd.print("HVALA NA ");
