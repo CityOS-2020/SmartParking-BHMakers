@@ -23,6 +23,7 @@ void loop() {
     pingTimer += pingSpeed;      
     sonar.ping_timer(echoCheck); 
   }
+  delay(500);
  
 
 }
@@ -38,8 +39,7 @@ void echoCheck() {
     }
     else if ( sonar.ping_result / US_ROUNDTRIP_CM > 50){
       i = 1;
-      }
-    delay(30000); 
+      } 
     bhmakers.println(i); 
   }
   
