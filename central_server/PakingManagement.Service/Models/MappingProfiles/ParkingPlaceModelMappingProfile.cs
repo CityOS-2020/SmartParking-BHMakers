@@ -12,7 +12,8 @@ namespace Makers.SmartParking.PakingManagement.Service.Models.MappingProfiles
         protected override void Configure()
         {
             Mapper.CreateMap<ParkingPlace, ParkingPlaceModel>()
-                .ForMember(pp => pp.Status, m => m.MapFrom(o => o.CurrentStatus != null ? (ParkingPlaceStatusModel) ((int) o.CurrentStatus.Status) : ParkingPlaceStatusModel.Unknown));
+                .ForMember(pp => pp.Status, m => m.MapFrom(o => o.CurrentStatus != null ? (ParkingPlaceStatusModel) ((int) o.CurrentStatus.Status) : ParkingPlaceStatusModel.Unknown))
+                .ForMember(pp => pp.Parking, m => m.Ignore());
         }
     }
 }

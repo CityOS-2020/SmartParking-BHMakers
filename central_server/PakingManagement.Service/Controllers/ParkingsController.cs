@@ -76,6 +76,7 @@ namespace Makers.SmartParking.PakingManagement.Service.Controllers
                     if (expiredParkingPlaces.ContainsKey(place.Id))
                     {
                         place.Status = ParkingPlaceStatusModel.Expired;
+                        place.ExpiresAt = expiredParkingPlaces[place.Id].ExpiredAt;
                     }
                 }
 

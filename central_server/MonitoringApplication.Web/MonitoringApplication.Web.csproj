@@ -14,7 +14,7 @@
     <RootNamespace>Makers.SmartParking.MonitoringApplication.Web</RootNamespace>
     <AssemblyName>MonitoringApplication.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -86,6 +86,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularJS\libs\angular-strap\angular-strap.js" />
+    <Content Include="AngularJS\libs\angular-strap\angular-strap.min.js" />
+    <Content Include="AngularJS\libs\angular-strap\angular-strap.tpl.js" />
+    <Content Include="AngularJS\libs\angular-strap\angular-strap.tpl.min.js" />
     <Content Include="AngularJS\libs\angular\angular-cookies.js" />
     <Content Include="AngularJS\libs\angular\angular-cookies.min.js" />
     <Content Include="AngularJS\libs\angular\angular-messages.js" />
@@ -100,9 +104,11 @@
     <Content Include="AngularJS\libs\ui-router\angular-ui-router.min.js" />
     <Content Include="AngularJS\main-module\main-module.js" />
     <Content Include="AngularJS\parking-module\controllers\map.js" />
+    <Content Include="AngularJS\parking-module\controllers\parking-details.js" />
     <Content Include="AngularJS\parking-module\controllers\simulator.js" />
     <Content Include="AngularJS\parking-module\parking-module.js" />
     <Content Include="AngularJS\parking-module\templates\map.html" />
+    <Content Include="AngularJS\parking-module\templates\parking-details.html" />
     <Content Include="AngularJS\parking-module\templates\simulator.html" />
     <Content Include="Content\bootstrap-yeti.min.css" />
     <Content Include="Content\custom.css" />
@@ -163,9 +169,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>1189</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:11000/</IISUrl>
+          <IISUrl>http://localhost:9009/web</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

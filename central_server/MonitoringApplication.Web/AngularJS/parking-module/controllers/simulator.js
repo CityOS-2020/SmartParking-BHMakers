@@ -1,5 +1,5 @@
 ﻿angular.module("ParkingModule")
-    .controller("SimulatorCtrl", function ($scope, Parking, ParkingPlace, UnauthorizedPayment) {
+    .controller("SimulatorCtrl", function ($scope, Parking, ParkingPlace, UnauthorizedPayment, ParkingPlaceStatus) {
 
         $scope.parkings = [];
         $scope.parkingPlaces = {};
@@ -29,16 +29,10 @@
         $scope.changeStatus = function (place) {
             var status = $scope.changeStatusHash[place.id];
             if (status >= 0) {
-                ParkingPlace.get(
+                ParkingPlaceStatus.get(
                     { parkingId: place.parkingId, placeId: place.id, status: status },
                     function success() {
-                        // Update parking
-                        Parking.get(
-                            { parkingId: place.parkingId },
-                            function success(data) {
-                                $scope.parkingPlaces[data.id] = data.parkingPlaces;
-                            }
-                        );
+                        $scope.refreshParkingPlaces(place.parkingId);
                     })
             }
         }
@@ -52,14 +46,18 @@
                 duration: hours + ":00:00"
             },
             function success() {
-                // Update parking
-                Parking.get(
-                    { parkingId: place.parkingId },
-                    function success(data) {
-                        $scope.parkingPlaces[data.id] = data.parkingPlaces;
-                    }
-                );
+                $scope.refreshParkingPlaces(place.parkingId);
             })
+        }
+
+        $scope.refreshParkingPlaces = function(parkingId) {
+            // Update parking
+            Parking.get(
+                { parkingId: parkingId },
+                function success(data) {
+                    $scope.parkingPlaces[data.id] = data.parkingPlaces;
+                }
+            );
         }
 
         init();

@@ -21,7 +21,7 @@ namespace Makers.SmartParking.Domain.Abstract
 
         IList<Parking> GetParkings(params Expression<Func<Parking, object>>[] includes);
 
-        ParkingPlace GetPlaceByCode(int parkingId, string parkingPlaceCode);
+        ParkingPlace GetPlaceByCode(int parkingId, string parkingPlaceCode, params Expression<Func<ParkingPlace, object>>[] includes);
 
         IList<ExpiredParkingPlace> GetExpiredAndOccupiedParkingPlaces();
     }

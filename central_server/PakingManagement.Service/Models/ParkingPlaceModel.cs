@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,7 +15,8 @@ namespace Makers.SmartParking.PakingManagement.Service.Models
         public ParkingPlaceStatusModel Status { get; set; }
 
         public int ParkingId { get; set; }
+        public ParkingModel Parking { get; set; }
 
-        // ExpiredAt
+        public DateTime? ExpiresAt { get; set; }
     }
 }

@@ -1,31 +1,38 @@
 ﻿angular.module("ParkingModule")
-    .controller('MapCtrl', function ($scope, Parking) {
+    .controller('MapCtrl', function ($scope, Parking, $modal) {
 
         $scope.parkings = [];
 
         function init() {
-            $scope.parkings = Parking.query(function success(parkings) {
-                for (var i in parkings) {
-                    var parking = parkings[i];
+            
+        }
 
-                    var str = "<b>" + parking.name + "</b>";
-                    str += "<br /><br />";
-                    str += "Total places: " + parking.totalPlaces + "<br />";
-                    str += "Free places: " + parking.freePlaces + "<br />";
-                    str += "Blocked places: " + parking.blockedSensors + "<br />";
-                    str += "Expired places: " + parking.expiredButOccupiedPlaces;
+        function loadParkings() {
+            $scope.parkings = Parking.query(
+                null,
+                function success(parkings) {
+                    for (var i=0; i<parkings.length; i++) {
+                        var parking = parkings[i];
 
-                    var icon = greenIcon;
+                        var str = "<b>" + parking.name + "</b>";
+                        str += "<br /><br />";
+                        str += "Total places: " + parking.totalPlaces + "<br />";
+                        str += "Free places: " + parking.freePlaces + "<br />";
+                        str += "Blocked places: " + parking.blockedSensors + "<br />";
+                        str += "Expired places: " + parking.expiredButOccupiedPlaces + "<br /><br />";
+                        str += '<button type="button" class="btn btn-link" onclick="testFn('+ parking.id +')">Detalji</a>';
 
-                    if (parking.blockedSensors > 0)
-                        icon = redIcon;
-                    else if (parking.expiredButOccupiedPlaces > 0)
-                        icon = yellowIcon;
+                        var icon = greenIcon;
 
-                    L.marker([parking.gpsCoordinate.latitude, parking.gpsCoordinate.longitude], { icon: icon }).addTo(map)
-                        .bindPopup(str);
-                }
-            });
+                        if (parking.blockedSensors > 0)
+                            icon = redIcon;
+                        else if (parking.expiredButOccupiedPlaces > 0)
+                            icon = yellowIcon;
+
+                        L.marker([parking.gpsCoordinate.latitude, parking.gpsCoordinate.longitude], { icon: icon }).addTo(map)
+                            .bindPopup(str);
+                    }
+                });
         }
 
         var map;
@@ -72,6 +79,16 @@
                 jQuery("#map").height(height - 45);
                 map.invalidateSize();
             });
+
+
+            window.testFn = function (parkingId) {
+                var newScope = $scope.$new();
+                newScope.parkingId = parkingId;
+
+                var myModal = $modal({ scope: newScope, template: 'AngularJS/parking-module/templates/parking-details.html', show: true });
+            }
+
+            loadParkings();
         }
 
         init();

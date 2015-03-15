@@ -1,0 +1,6 @@
+C:\VS2012_Projects\SmartParking\ParkingSensor.SerialPortServer\bin\Debug\ParkingSensor.SerialPortServer.exe.config
+C:\VS2012_Projects\SmartParking\ParkingSensor.SerialPortServer\bin\Debug\ParkingSensor.SerialPortServer.exe
+C:\VS2012_Projects\SmartParking\ParkingSensor.SerialPortServer\bin\Debug\ParkingSensor.SerialPortServer.pdb
+C:\VS2012_Projects\SmartParking\ParkingSensor.SerialPortServer\obj\Debug\ParkingSensor.SerialPortServer.csprojResolveAssemblyReference.cache
+C:\VS2012_Projects\SmartParking\ParkingSensor.SerialPortServer\obj\Debug\ParkingSensor.SerialPortServer.exe
+C:\VS2012_Projects\SmartParking\ParkingSensor.SerialPortServer\obj\Debug\ParkingSensor.SerialPortServer.pdb

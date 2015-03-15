@@ -72,11 +72,12 @@ namespace Makers.SmartParking.DataAccess.Repositories
             }
         }
 
-        public ParkingPlace GetPlaceByCode(int parkingId, string parkingPlaceCode)
+        public ParkingPlace GetPlaceByCode(int parkingId, string parkingPlaceCode, params Expression<Func<ParkingPlace, object>>[] includes)
         {
             using (var context = GetContext())
             {
-                var parkingPlace = context.ParkingPlaces.SingleOrDefault(o => o.ParkingId == parkingId && o.Code == parkingPlaceCode);
+                var query = ApplyInclude(context.ParkingPlaces, includes);
+                var parkingPlace = query.SingleOrDefault(o => o.ParkingId == parkingId && o.Code == parkingPlaceCode);
                 return parkingPlace;
             }
         }

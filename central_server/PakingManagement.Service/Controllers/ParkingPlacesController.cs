@@ -1,7 +1,9 @@
-﻿using Makers.SmartParking.DataAccess.Repositories;
+﻿using AutoMapper;
+using Makers.SmartParking.DataAccess.Repositories;
 using Makers.SmartParking.Domain.Abstract;
 using Makers.SmartParking.Domain.BusinessObjects;
 using Makers.SmartParking.Domain.Enums;
+using Makers.SmartParking.PakingManagement.Service.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,22 +18,24 @@ namespace Makers.SmartParking.PakingManagement.Service.Controllers
         #region Dependencies
 
         private IParkingsRepository parkingsRepository;
-        
+        private IMappingEngine mapper;
+
         #endregion
 
-        public ParkingPlacesController(IParkingsRepository parkingsRepository)
+        public ParkingPlacesController(IParkingsRepository parkingsRepository, IMappingEngine mapper)
         {
             this.parkingsRepository = parkingsRepository;
+            this.mapper = mapper;
         }
 
         public ParkingPlacesController()
-            :this(new ParkingsRepository())
+            :this(new ParkingsRepository(), Mapper.Engine)
         {
             
         }
         
         [HttpGet]
-        [Route("api/parkings/{parkingId:int}/places/{parkingPlaceId:int}/")]
+        [Route("api/parkings/{parkingId:int}/places/{parkingPlaceId:int}/status")]
         public IHttpActionResult UpdateStatus(int parkingId, int parkingPlaceId, [FromUri] ParkingPlaceStatus status)
         {
             try
@@ -63,11 +67,35 @@ namespace Makers.SmartParking.PakingManagement.Service.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("api/expired-parking-places")]
-        public IHttpActionResult GetExpiredParkingPlaces()
+        //[HttpGet]
+        //[Route("api/expired-parking-places")]
+        //public IHttpActionResult GetExpiredParkingPlaces()
+        //{
+        //    return null;
+        //}
+
+        [Route("api/parkings/{parkingId:int}/places/by-code/{parkingPlaceCode}")]
+        public IHttpActionResult Get(int parkingId, string parkingPlaceCode)
         {
-            return null;
+            try
+            {
+                var parkingPlace = parkingsRepository.GetPlaceByCode(parkingId, parkingPlaceCode, o => o.CurrentStatus, o => o.Parking, o => o.Payments, o=> o.StatusChanges);
+                if (parkingPlace == null)
+                    return NotFound();
+                
+                var model = mapper.Map<ParkingPlaceModel>(parkingPlace);
+                model.Parking = mapper.Map<ParkingModel>(parkingPlace.Parking);
+                model.Parking.ParkingPlaces = null;
+
+                if (parkingPlace.Payments!= null && parkingPlace.Payments.Count() > 0)
+                    model.ExpiresAt = parkingPlace.Payments.Max(o => o.CreatedAt + o.Duration);
+
+                return Ok(model);
+            }
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.InternalServerError, e.Message);
+            }
         }
     }
 }
