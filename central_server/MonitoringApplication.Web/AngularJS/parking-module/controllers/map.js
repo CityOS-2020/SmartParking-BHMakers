@@ -1,17 +1,27 @@
 ﻿angular.module("ParkingModule")
-    .controller('MapCtrl', function ($scope, Parking, $modal) {
+    .controller('MapCtrl', function ($scope, Parking, $modal, $interval) {
 
         $scope.parkings = [];
+        var refreshTimer = null;
+        var markers = {};
 
         function init() {
-            
+            refreshTimer = $interval(function () {
+                for (var i in markers) {
+                    updateParking();
+                }
+            }, 15 * 1000);
+
+            $scope.$on('$locationChangeStart', function () {
+                $timeout.cancel(refreshTimer);
+            });
         }
 
-        function loadParkings() {
+        function updateParking() {
             $scope.parkings = Parking.query(
                 null,
                 function success(parkings) {
-                    for (var i=0; i<parkings.length; i++) {
+                    for (var i = 0; i < parkings.length; i++) {
                         var parking = parkings[i];
 
                         var str = "<b>" + parking.name + "</b>";
@@ -20,7 +30,7 @@
                         str += "Free places: " + parking.freePlaces + "<br />";
                         str += "Blocked places: " + parking.blockedSensors + "<br />";
                         str += "Expired places: " + parking.expiredButOccupiedPlaces + "<br /><br />";
-                        str += '<button type="button" class="btn btn-link" onclick="testFn('+ parking.id +')">Detalji</a>';
+                        str += '<button type="button" class="btn btn-link" onclick="testFn(' + parking.id + ')">Detalji</a>';
 
                         var icon = greenIcon;
 
@@ -29,7 +39,36 @@
                         else if (parking.expiredButOccupiedPlaces > 0)
                             icon = yellowIcon;
 
-                        L.marker([parking.gpsCoordinate.latitude, parking.gpsCoordinate.longitude], { icon: icon }).addTo(map)
+                        markers[parking.id].setIcon(icon);
+                        markers[parking.id].setPopupContent(str);
+                    }
+                });
+        }
+
+        function loadParkings() {
+            $scope.parkings = Parking.query(
+                null,
+                function success(parkings) {
+                    for (var i = 0; i < parkings.length; i++) {
+                        var parking = parkings[i];
+
+                        var str = "<b>" + parking.name + "</b>";
+                        str += "<br /><br />";
+                        str += "Total places: " + parking.totalPlaces + "<br />";
+                        str += "Free places: " + parking.freePlaces + "<br />";
+                        str += "Blocked places: " + parking.blockedSensors + "<br />";
+                        str += "Expired places: " + parking.expiredButOccupiedPlaces + "<br /><br />";
+                        str += '<button type="button" class="btn btn-link" onclick="testFn(' + parking.id + ')">Detalji</a>';
+
+                        var icon = greenIcon;
+
+                        if (parking.blockedSensors > 0)
+                            icon = redIcon;
+                        else if (parking.expiredButOccupiedPlaces > 0)
+                            icon = yellowIcon;
+
+                        markers[parking.id] = L.marker([parking.gpsCoordinate.latitude, parking.gpsCoordinate.longitude], { icon: icon })
+                            .addTo(map)
                             .bindPopup(str);
                     }
                 });
@@ -64,7 +103,7 @@
 
         $scope.displayMap = function () {
             var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-            jQuery("#map").height(height-45);
+            jQuery("#map").height(height - 45);
 
             // create a map in the "map" div, set the view to a given place and zoom
             map = L.map('map').setView([43.8562586, 18.4130763], 13);

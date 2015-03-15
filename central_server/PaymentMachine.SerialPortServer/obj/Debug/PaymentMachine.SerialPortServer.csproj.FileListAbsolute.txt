@@ -4,3 +4,6 @@ C:\VS2012_Projects\SmartParking\PaymentMachine.SerialPortServer\bin\Debug\Paymen
 C:\VS2012_Projects\SmartParking\PaymentMachine.SerialPortServer\obj\Debug\PaymentMachine.SerialPortServer.csprojResolveAssemblyReference.cache
 C:\VS2012_Projects\SmartParking\PaymentMachine.SerialPortServer\obj\Debug\PaymentMachine.SerialPortServer.exe
 C:\VS2012_Projects\SmartParking\PaymentMachine.SerialPortServer\obj\Debug\PaymentMachine.SerialPortServer.pdb
+C:\SmartParking\central_server\PaymentMachine.SerialPortServer\bin\Debug\PaymentMachine.SerialPortServer.exe.config
+C:\SmartParking\central_server\PaymentMachine.SerialPortServer\obj\Debug\PaymentMachine.SerialPortServer.exe
+C:\SmartParking\central_server\PaymentMachine.SerialPortServer\obj\Debug\PaymentMachine.SerialPortServer.pdb
